@@ -1,0 +1,60 @@
+﻿<Page x:Class="MVVM_demo.Product_Detail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MVVM_demo"
+      mc:Ignorable="d"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="400" d:DesignWidth="920"
+      Title="Product_Detail" Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Control.Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="82"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Control.Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="112"/>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <DockPanel Background="#B7D9F3" Name="Dock_main" VerticalAlignment="top" Margin="10,20"  HorizontalAlignment="Left" LastChildFill="False">
+            <StackPanel>
+                <WrapPanel>
+                    <TextBlock FontFamily="Segoe UI Semibold">Name:</TextBlock>
+                    <TextBox Name="PName" BorderThickness="0,0,0,1"></TextBox>
+                </WrapPanel>
+
+                <WrapPanel>
+                       <TextBlock FontFamily="Segoe UI Semibold">Description:</TextBlock>
+                   <TextBox Name="PDescription" BorderThickness="0,0,0,1" ></TextBox>
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock FontFamily="Segoe UI Semibold">Status:</TextBlock>
+                    <TextBox Name="PStatus" BorderThickness="0,0,0,1"></TextBox>
+                </WrapPanel>
+            </StackPanel>
+        </DockPanel>
+    
+        <DataGrid x:Name="DG_Product" HorizontalAlignment="Left" Margin="257,2,0,0" Height="370" Width="640" VerticalAlignment="Top" MouseDoubleClick="DG_Product_MouseDoubleClick"/>
+        <StackPanel Orientation="Horizontal">
+
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Margin="30,0,0,0" Height="35" Width="45" Click="Add_Click" >
+                <materialDesign:PackIcon Kind="Add"></materialDesign:PackIcon>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Margin="20,0,0,0" Height="35" Width="45" Click="Update_Click"  >
+                <materialDesign:PackIcon Kind="Update"></materialDesign:PackIcon>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFloatingActionMiniDarkButton}" Margin="20,0,0,0"  Height="35" Width="45" Click="Delete_Click" >
+                <materialDesign:PackIcon Kind="Delete"></materialDesign:PackIcon>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Stock Management" Class="ProductLinqClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=&quot;Stock Management&quot;;Integrated Security=True" SettingsObjectName="MVVM_demo.Properties.Settings" SettingsPropertyName="Stock_ManagementConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Product_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Product_Description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Product_Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Stock_" Member="Stock_s">
+    <Type Name="Stock_">
+      <Column Name="Product_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="[Product Name]" Member="Product_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Trans_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
